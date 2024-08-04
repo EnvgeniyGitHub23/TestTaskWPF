@@ -1,0 +1,45 @@
+﻿<Window x:Class="TestTaskWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTaskWPF"
+        mc:Ignorable="d"
+        Title="{DynamicResource ProgramName}" Height="450" Width="600" 
+        ResizeMode="NoResize"
+        Icon="Resources/logo.ico"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Strings.ru.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel  x:Name="dock" Background="LightGray" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="3">
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,5,0,5" VerticalAlignment="Center" Width="200" />
+            <Button x:Name="loadButton" IsEnabled="False" Content="{DynamicResource Load}" HorizontalAlignment="Left" Margin="15,5,0,5" VerticalAlignment="Center" Width="120" Click="Button_Load_Click"/>
+            <Button x:Name="langButton" Content="{DynamicResource Lang}" HorizontalAlignment="Right" Margin="0,5,10,5" VerticalAlignment="Center" Width="40" Click="OnChangeLanguageClick"/>
+      </DockPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch">
+
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.Row="0" SelectionChanged="DataGridMain_SelectionChanged" CanUserAddRows="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{DynamicResource DataGridColumnId}" Binding="{Binding Id}" Width="40"/>
+                    <DataGridTextColumn Header="{DynamicResource DataGridColumnName}" Binding="{Binding Name}" Width="120"/>
+                    <DataGridTextColumn Header="{DynamicResource DataGridColumnCode}" Binding="{Binding Code}" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBox x:Name="detailsTextBox" Grid.Row="1" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Width="310" HorizontalAlignment="Right"/>
+        
+        </StackPanel>    
+    </Grid>
+</Window>

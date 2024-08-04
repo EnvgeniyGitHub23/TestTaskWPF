@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="ProgramName">The reference information system</sys:String>
+    <sys:String x:Key="Load">Load</sys:String>
+    <sys:String x:Key="Lang">EN</sys:String>
+
+    <sys:String x:Key="ErrorGetUrl">Error during request</sys:String>
+    <sys:String x:Key="ErrorContent">Incorrect response received</sys:String>
+    <sys:String x:Key="ErrorNoUrl">The corresponding url was not found</sys:String>
+
+    <sys:String x:Key="DataGridColumnId">ID</sys:String>
+    <sys:String x:Key="DataGridColumnName">Name</sys:String>
+    <sys:String x:Key="DataGridColumnCode">Code</sys:String>
+
+</ResourceDictionary>
